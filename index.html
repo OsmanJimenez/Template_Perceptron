@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <title>Perceptron Simple</title>
+  <!-- Preloader -->
+  <link rel="stylesheet" href="css/preloader.css" />
   <!-- MDB icon -->
-  <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="img/perce.ico" type="image/x-icon" />
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" />
   <!-- Google Fonts Roboto -->
@@ -19,6 +21,36 @@
 </head>
 
 <body>
+
+  <div class="loader-page">
+    <div class="boxes">
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+
   <nav>
     <div class="card text-center">
       <div class="card-header">
@@ -34,440 +66,231 @@
       <div class="card-body">
         <h5 class="card-title">Perceptron Unicapa</h5>
         <p class="card-text">
-          Aqui tengo que poner texto o una imagen, ya se me ocurrira algo.
+          Desarrollado para la clase de Inteligencia Artificial.
         </p>
+      </div>
+    </div>
+    <nav>
 
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal1">
-          AND
-        </button>
+      <div class="mx-auto" style="width: 200px;height: 20px;">
+      </div>
 
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal2">
-          OR
-        </button>
-
-        <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal3">
-          XOR
-        </button>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Perceptron Unicapa Compuerta AND</h5>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal4">
-                  Comprobar
-                </button>
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-sm">
+            <div class="card sombra">
+              <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                <img src="img/com_and.png" class="img-fluid" />
+                <a href="/and">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
               </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Patron</th>
-                      <th scope="col">X1</th>
-                      <th scope="col">X2</th>
-                      <th scope="col">D</th>
-                      <th scope="col">P1</th>
-                      <th scope="col">P2</th>
-                      <th scope="col">O</th>
-                      <th scope="col">N</th>
-                      <th scope="col">F(x)</th>
-                      <th scope="col">Y</th>
-                      <th scope="col">Error</th>
-                      <th scope="col">Delta 1</th>
-                      <th scope="col">Delta 2</th>
-                      <th scope="col">Iteración</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-outline-success">Descargar</button>
+              <div class="card-body">
+                <h5 class="card-title">AND</h5>
+                <a href="/" class="btn btn-outline-primary btn-lg btn-block sombra-btn" data-toggle="modal"
+                  data-target="#modaland">GENERAR</a>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Perceptron Unicapa Compuerta OR</h5>
-
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal5">
-                  Comprobar
-                </button>
+          <div class="col-sm">
+            <div class="card sombra">
+              <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                <img src="img/com_or.png" class="img-fluid" />
+                <a href="/or">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
               </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Patron</th>
-                      <th scope="col">X1</th>
-                      <th scope="col">X2</th>
-                      <th scope="col">D</th>
-                      <th scope="col">P1</th>
-                      <th scope="col">P2</th>
-                      <th scope="col">O</th>
-                      <th scope="col">N</th>
-                      <th scope="col">F(x)</th>
-                      <th scope="col">Y</th>
-                      <th scope="col">Error</th>
-                      <th scope="col">Delta 1</th>
-                      <th scope="col">Delta 2</th>
-                      <th scope="col">Iteración</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-outline-success">Descargar</button>
+              <div class="card-body">
+                <h5 class="card-title">OR</h5>
+                <a href="/or" class="btn btn-outline-success btn-lg btn-block sombra-btn" data-toggle="modal"
+                  data-target="#modalor">GENERAR</a>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Perceptron Unicapa Compuerta XOR</h5>
-
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal6">
-                  Comprobar
-                </button>
+          <div class="col-sm">
+            <div class="card sombra">
+              <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                <img src="img/com_nand.png" class="img-fluid" />
+                <a href="/or">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
               </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Patron</th>
-                      <th scope="col">X1</th>
-                      <th scope="col">X2</th>
-                      <th scope="col">D</th>
-                      <th scope="col">P1</th>
-                      <th scope="col">P2</th>
-                      <th scope="col">O</th>
-                      <th scope="col">N</th>
-                      <th scope="col">F(x)</th>
-                      <th scope="col">Y</th>
-                      <th scope="col">Error</th>
-                      <th scope="col">Delta 1</th>
-                      <th scope="col">Delta 2</th>
-                      <th scope="col">Iteración</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <th scope="row">1</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                      <td>2</td>
-                      <td>1</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-outline-success">Descargar</button>
+              <div class="card-body">
+                <h5 class="card-title">NAND</h5>
+                <a href="/" class="btn btn-outline-danger btn-lg btn-block sombra-btn" data-toggle="modal"
+                  data-target="#modalnan">GENERAR</a>
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Comprobar Perceptron Unicapa Compuerta AND</h5>
-
+          <div class="col-sm">
+            <div class="card sombra">
+              <div class="bg-image hover-overlay ripple" data-ripple-color="light">
+                <img src="img/com_nor.png" class="img-fluid" />
+                <a href="/and">
+                  <div class="mask" style="background-color: rgba(251, 251, 251, 0.15)"></div>
+                </a>
               </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-                <div class="container">
-                  <div class="row" style="margin-top: 20px;">
-                    <div class="col-sm">
-                      <label for="x1" class="form-label">X1:</label>
-                      <select id="x1" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <label for="x2" class="form-label">X2:</label>
-                      <select id="x2" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <button type="button" class="btn btn-outline-success" style="margin-top: 35px;" data-dismiss="modal">Comprobar</button>
-                    </div>
-                    <div class="col-sm">
-                      <label for="resultado" class="form-label">Resultado:</label>
-                      <input type="text" class="form-control" id="resultado">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Comprobar Perceptron Unicapa Compuerta OR</h5>
-
-              </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-                <div class="container">
-                  <div class="row" style="margin-top: 20px;">
-                    <div class="col-sm">
-                      <label for="x1" class="form-label">X1:</label>
-                      <select id="x1" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <label for="x2" class="form-label">X2:</label>
-                      <select id="x2" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <button type="button" class="btn btn-outline-success" style="margin-top: 35px;" data-dismiss="modal">Comprobar</button>
-                    </div>
-                    <div class="col-sm">
-                      <label for="resultado" class="form-label">Resultado:</label>
-                      <input type="text" class="form-control" id="resultado">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Comprobar Perceptron Unicapa Compuerta XOR</h5>
-              </div>
-              <div class="modal-body">
-                <img src="img/perceptron.webp" class="img-fluid rounded" style="width: 100%; height: 350px" alt="...">
-                <div class="container">
-                  <div class="row" style="margin-top: 20px;">
-                    <div class="col-sm">
-                      <label for="x1" class="form-label">X1:</label>
-                      <select id="x1" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <label for="x2" class="form-label">X2:</label>
-                      <select id="x2" class="form-select">
-                        <option>0</option>
-                        <option>1</option>
-                      </select>
-                    </div>
-                    <div class="col-sm">
-                      <button type="button" class="btn btn-outline-success" style="margin-top: 35px;" data-dismiss="modal">Comprobar</button>
-                    </div>
-                    <div class="col-sm">
-                      <label for="resultado" class="form-label">Resultado:</label>
-                      <input type="text" class="form-control" id="resultado">
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+              <div class="card-body">
+                <h5 class="card-title">NOR</h5>
+                <p class="card-text">
+                  <a href="/" class="btn btn-outline-warning btn-lg btn-block sombra-btn" data-toggle="modal"
+                    data-target="#modalnor">GENERAR</a>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <nav>
+
+      <div class="mx-auto" style="width: 200px;height: 20px;">
+      </div>
+
+      <div class="card text-center">
+        <div class="card-body">
+          <p class="card-text">Desarrollado con:</p>
+          <button type="button" class="btn btn-outline-success btn-floating" data-ripple-color="dark">
+            <i class="fab fa-python"></i>
+          </button>
+
+          <button type="button" class="btn btn-outline-danger btn-floating" data-ripple-color="dark">
+            <i class="fas fa-flask"></i>
+          </button>
+
+          <button type="button" class="btn btn-outline-warning btn-floating" data-ripple-color="dark">
+            <i class="fas fa-code"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal AND-->
+      
+
+      <div class="modal fade" id="modaland" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COMPUERTA AND</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a class="btn btn-outline-primary" href="/and">2 Entradas</a>
+              <a class="btn btn-outline-primary" href="/and2">3 Entradas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Modal OR-->
+      <div class="modal fade" id="modalor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COMPUERTA OR</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a class="btn btn-outline-success" href="/or">2 Entradas</a>
+              <a class="btn btn-outline-success" href="/or2">3 Entradas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal NAND-->
+      <div class="modal fade" id="modalnan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COMPUERTA NAND</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a class="btn btn-outline-danger" href="/nan">2 Entradas</a>
+              <a class="btn btn-outline-danger" href="/nan2">3 Entradas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal NOR-->
+      <div class="modal fade" id="modalnor" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered text-center">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">COMPUERTA NOR</h5>
+              <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <a class="btn btn-outline-warning" href="/nor">2 Entradas</a>
+              <a class="btn btn-outline-warning" href="/nor2">3 Entradas</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Comprobar Perceptron Unicapa Compuerta XOR</h5>
+            </div>
+            <div class="modal-body">
+              <img src="{{ url_for('static', filename='img/perceptron.webp') }}" class="img-fluid rounded"
+                style="width: 100%; height: 350px" alt="...">
+              <div class="container">
+                <div class="row" style="margin-top: 20px;">
+                  <div class="col-sm">
+                    <label for="x1" class="form-label">X1:</label>
+                    <select id="x1" class="form-select">
+                      <option>0</option>
+                      <option>1</option>
+                    </select>
+                  </div>
+                  <div class="col-sm">
+                    <label for="x2" class="form-label">X2:</label>
+                    <select id="x2" class="form-select">
+                      <option>0</option>
+                      <option>1</option>
+                    </select>
+                  </div>
+                  <div class="col-sm">
+                    <button type="button" class="btn btn-outline-success" style="margin-top: 35px;"
+                      data-dismiss="modal">Comprobar</button>
+                  </div>
+                  <div class="col-sm">
+                    <label for="resultado" class="form-label">Resultado:</label>
+                    <input type="text" class="form-control" id="resultado">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-danger" data-dismiss="modal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
 </body>
 
 <!-- MDB -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/mdb.min.js"></script>
+
 <!-- Custom scripts -->
 <script type="text/javascript">
+  $(window).on('load', function () {
+    setTimeout(function () {
+      $(".loader-page").css({
+        visibility: "hidden",
+        opacity: "0"
+      })
+    }, 2000);
+
+  });
 </script>
 
 </html>
